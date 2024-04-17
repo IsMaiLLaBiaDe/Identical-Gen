@@ -6,7 +6,43 @@
 
 
 </head>
+
+
+
+
+
+
+
+<div class="flex-container">
+  <div></div>
+  <div>          <!--Important Field-->
+            <center>   <form action="SameGen" method="post"></form> 
+             <center>   <label> Day </label></center><input type="week" placeholder="Day"></input>
+             <center>   <label> Month </label></center><input  type="month"placeholder="Month"></input>
+               <center> <label> Year </label></center><input type="year" placeholder="Year"></input>
+                <button style="margin-top:3mm;" type="submit"> Sail </button> </center>
+
+            </form>
+                
+    
+
+            <!--Optionel Field--></div>
+  <div></div>  
+</div>
+
 <style>
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  flex: 50%;
+}
 label{ 
     display: flex;
  flex: auto;
@@ -17,10 +53,17 @@ label{
 
 form {
    
-    display: flex;
+   display: flex;
  flex: auto;
 
 }
+cf {
+   
+   display: flex;
+ flex: auto;
+
+}
+
 
 button {
  
@@ -35,22 +78,5 @@ button {
 
 
 </style>
-<body>
 
-            <!--Important Field-->
-            <div class=""> <form action="" method="post"></form> 
-                <label> Day </label><input type="week" placeholder="Day"></input>
-                <label> Month </label><input  type="month"placeholder="Month"></input>
-                <label> Year </label><input type="year" placeholder="Year"></input>
-                <button type="submit"> Sail </button>
-
-            </form>
-                
-    
-    </div>
-            <!--Optionel Field-->
-    <div>
-   
-    </div>
-</body>
 </html>
