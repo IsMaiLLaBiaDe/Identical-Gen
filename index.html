@@ -1,4 +1,20 @@
+<?php
 
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM users
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -14,24 +30,27 @@
 
 
 <div class="flex-container">
-  <div></div>
-  <div>          <!--Important Field-->
-            <center>   <form action="SameGen" method="post"></form> 
-             <center>   <label> Day </label></center><input type="week" placeholder="Day"></input>
-             <center>   <label> Month </label></center><input  type="month"placeholder="Month"></input>
-               <center> <label> Year </label></center><input type="year" placeholder="Year"></input>
-                <button style="margin-top:3mm;" type="submit"> Sail </button> </center>
+<div><a href="Identical-Gen" ><img  width="50%" height="50%" src="logo.png"></img></a></div>
+<div>          <!--Important Field-->
 
-            </form>
-                
-    
-
+   <form action="./SameGen.php" method="post">
+   <label> BirthDay </label>
+   <input type="date" placeholder="BirthDay"></input><br>
+   <button  type="submit"> Sail </button>
+   </form>
+		
             <!--Optionel Field--></div>
-  <div></div>  
-</div>
+  <div><a  href="register.html" ><img width="25px" height="25px"  src="assets/icons/user.svg"> </img></a> <a style="margin:2px;padding: 10px;" href="login.html" > <img width="25px" height="25px"   src="assets/icons/login.svg"></img></a></div>
 
 <style>
 
+body {
+padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
 .flex-container {
   display: flex;
 }
@@ -40,7 +59,7 @@
 
   margin: 10px;
   padding: 20px;
-  font-size: 30px;
+
   flex: 50%;
 }
 label{ 
@@ -63,15 +82,38 @@ cf {
  flex: auto;
 
 }
+ a {
+  text-decoration: none;
+}
 
-
-button {
+label {
  
- display: flex;
- flex: auto;
+
  font-size: 20px;
  box-shadow: 2 2 2;
  font-family: monospace;
+padding-left: 20px;
+  margin-right: 20px;
+
+
+}
+
+
+input {
+ 
+border-radius:20px;
+height: 20px;
+text-align: center;
+
+
+}
+button {
+ border-color:white;
+ border-radius:20px;
+
+  opacity: 50%;
+ font-family: monospace;
+ margin-left: 20px;
 
 
 }
